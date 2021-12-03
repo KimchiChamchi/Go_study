@@ -102,7 +102,7 @@
 // 	defer fmt.Println("나 다 됐엉!")
 // 	length = len(name)
 // 	uppercase = strings.ToUpper(name)
-// 	return // return 뒤에 반환할 값들을 생략할 수 있다
+// 	return
 // }
 
 // func main() {
