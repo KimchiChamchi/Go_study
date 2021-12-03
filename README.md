@@ -14,3 +14,6 @@ for for문 안에 있는 것들을 지정한 회수만큼 반복 실행하는 �
 range for문과 유사하며 다른 언어들의 forEach, map, loop 등의 역할을 하는 녀석
 
 ---
+```
+NPM START
+```
