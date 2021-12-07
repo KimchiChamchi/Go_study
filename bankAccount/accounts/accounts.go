@@ -1,6 +1,9 @@
 package accounts
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // 계좌 구조체
 // Account 앞을 대문자로 작성해야 다른곳에서 import 할 수 있음
@@ -39,3 +42,15 @@ func (a *Account) Withdraw(amount int) error {
 
 // 출금할 돈이 모자라면 에러
 var errNoMoney = errors.New("너 돈 없어 출금 안됨")
+
+// 계좌주인 변경하기
+func (a *Account) ChangeOwner(newOwner string) {
+	a.owner = newOwner
+}
+
+func (a Account) Owner() string {
+	return a.owner
+}
+func (a Account) String() string {
+	return fmt.Sprint(a.Owner(), "의 계좌\n금액 : ", a.Balance())
+}
