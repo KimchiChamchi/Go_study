@@ -11,3 +11,14 @@ main 함수가 종료되면 goroutines도 종료된다.
 goroutines 과 다음 함수 사이에 fmt.println을 잔뜩 끼워넣어봤으나 fmt.println가 전부 먼저 실행되었다.  
 아마 goroutines 다음에 있는 함수가 실행될 때 같이 실행되는것 같다.  
 또 goroutines을 사용중인 함수가 종료되면 goroutines도 종료되는게 아닐까 해서 main함수 안에 또다른 A함수를 만들고 그 안에서 goroutines을 사용해보았으나 A함수가 종료되어도 main함수가 종료되지 않은 상태면 goroutines은 계속 동작했다.
+
+goroutines에서 채널(channel)을 사용하여 메인함수가 goroutines을 기다리게 할 수 있다.
+
+```
+func 함수명(a 타입, c chan 타입) {
+    c <- 보낼내용
+}
+```
+
+이러면 c 를 통해 메인함수에게 메시지를 보내고  
+받을 곳에서
